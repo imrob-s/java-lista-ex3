@@ -10,7 +10,7 @@ public class ClienteDAO {
     public static void add(Cliente cliente) {
         String sql = "INSERT INTO cliente (nome, cpf, data_nascimento) VALUES (?, ?, ?)";
         try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql);){
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1, cliente.getNome());
             pstmt.setString(2, cliente.getCpf());
             pstmt.setString(3, cliente.getDataNascimento());
