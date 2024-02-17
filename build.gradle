@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.imrob'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation files('libs/lib.jar')
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+    implementation 'org.postgresql:postgresql:42.7.1'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
